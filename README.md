@@ -1,7 +1,7 @@
 # tableedit
 
-| aciton | result        |
-| -------|-------------- |
-| edit   | double-click  |
-| save   | enter         |
+| aciton       | result |
+| -------------|------- |
+| double-click | edit   |
+| enter        | save   |
 
