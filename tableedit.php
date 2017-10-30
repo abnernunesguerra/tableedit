@@ -1,5 +1,8 @@
 <?php 
-    
+/**
+ * font pt1: https://youtu.be/4mTJ2qY1Pa8
+ * font pt2: https://youtu.be/NkPRQiUTess 
+*/    
   $list = array(
       array('id'=> 1, 'name'=>'lorem', 'email'=>'lorem@teste.com'),
       array('id'=> 2, 'name'=>'ipsum', 'email'=>'ipsum@teste.com'),
