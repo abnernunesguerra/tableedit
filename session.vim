@@ -55,32 +55,33 @@ nmap u <Plug>(emmet-update-tag)
 nmap ; <Plug>(emmet-expand-word)
 vmap , <Plug>(emmet-expand-abbr)
 nmap , <Plug>(emmet-expand-abbr)
-vmap 9 <Plug>TComment-9
+nmap  <Plug>TComment-
+nmap 1 <Plug>TComment-1
+nmap 2 <Plug>TComment-2
+nmap 3 <Plug>TComment-3
+nmap 4 <Plug>TComment-4
+nmap 5 <Plug>TComment-5
+nmap 6 <Plug>TComment-6
+nmap 7 <Plug>TComment-7
+nmap 8 <Plug>TComment-8
 nmap 9 <Plug>TComment-9
+vmap 9 <Plug>TComment-9
 omap 9 <Plug>TComment-9
 vmap 8 <Plug>TComment-8
-nmap 8 <Plug>TComment-8
 omap 8 <Plug>TComment-8
 vmap 7 <Plug>TComment-7
-nmap 7 <Plug>TComment-7
 omap 7 <Plug>TComment-7
 vmap 6 <Plug>TComment-6
-nmap 6 <Plug>TComment-6
 omap 6 <Plug>TComment-6
 vmap 5 <Plug>TComment-5
-nmap 5 <Plug>TComment-5
 omap 5 <Plug>TComment-5
 vmap 4 <Plug>TComment-4
-nmap 4 <Plug>TComment-4
 omap 4 <Plug>TComment-4
 vmap 3 <Plug>TComment-3
-nmap 3 <Plug>TComment-3
 omap 3 <Plug>TComment-3
 vmap 2 <Plug>TComment-2
-nmap 2 <Plug>TComment-2
 omap 2 <Plug>TComment-2
 vmap 1 <Plug>TComment-1
-nmap 1 <Plug>TComment-1
 omap 1 <Plug>TComment-1
 map ca <Plug>TComment-ca
 map cc <Plug>TComment-cc
@@ -93,7 +94,6 @@ map r <Plug>TComment-r
 map   <Plug>TComment- 
 map p <Plug>TComment-p
 vmap  <Plug>TComment-
-nmap  <Plug>TComment-
 omap  <Plug>TComment-
 snoremap % b<BS>%
 snoremap ' b<BS>'
@@ -105,6 +105,8 @@ map ,w :w!
 map ,u :source /etc/vim/vimrc:echo " Done! vimrc file reloaded!"
 snoremap U b<BS>U
 vmap [% [%m'gv``
+smap \__ <Plug>TComment-\__
+nmap \__ <Plug>TComment-\__
 snoremap \ b<BS>\
 map \_s <Plug>TComment-\_s
 map \_n <Plug>TComment-\_n
@@ -115,8 +117,6 @@ xmap \_i <Plug>TComment-\_i
 map \_  <Plug>TComment-\_ 
 map \_p <Plug>TComment-\_p
 xmap \__ <Plug>TComment-\__
-nmap \__ <Plug>TComment-\__
-smap \__ <Plug>TComment-\__
 omap \__ <Plug>TComment-\__
 noremap \l :execute 'call PHPsynCHK()'
 map \rwp <Plug>RestoreWinPosn
@@ -154,6 +154,22 @@ nmap <silent> gc1 <Plug>TComment-gc1
 nmap <silent> gc <Plug>TComment-gc
 omap ic <Plug>TComment-ic
 vmap ic <Plug>TComment-ic
+xnoremap <Left> <Nop>
+nnoremap <Left> <Nop>
+xnoremap <Right> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Plug>TComment- :TComment
+snoremap <Plug>TComment-\__ :TComment
+nnoremap <Plug>TComment-\__ :TComment
+nnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
+nnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
+nnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
+nnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
+nnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
+nnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
+nnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
+nnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
+nnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
 snoremap <Left> bi
 snoremap <Right> a
 snoremap <BS> b<BS>
@@ -170,31 +186,22 @@ nnoremap <silent> <Plug>TComment-gc3c :let w:tcommentPos = getpos(".") | call t
 nnoremap <silent> <Plug>TComment-gc2c :let w:tcommentPos = getpos(".") | call tcomment#SetOption("count", 2) | set opfunc=tcomment#Operatorg@
 nnoremap <silent> <Plug>TComment-gc1c :let w:tcommentPos = getpos(".") | call tcomment#SetOption("count", 1) | set opfunc=tcomment#Operatorg@
 vnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
-nnoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
 onoremap <Plug>TComment-9 :call tcomment#SetOption("count", 9)
 vnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
-nnoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
 onoremap <Plug>TComment-8 :call tcomment#SetOption("count", 8)
 vnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
-nnoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
 onoremap <Plug>TComment-7 :call tcomment#SetOption("count", 7)
 vnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
-nnoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
 onoremap <Plug>TComment-6 :call tcomment#SetOption("count", 6)
 vnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
-nnoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
 onoremap <Plug>TComment-5 :call tcomment#SetOption("count", 5)
 vnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
-nnoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
 onoremap <Plug>TComment-4 :call tcomment#SetOption("count", 4)
 vnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
-nnoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
 onoremap <Plug>TComment-3 :call tcomment#SetOption("count", 3)
 vnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
-nnoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
 onoremap <Plug>TComment-2 :call tcomment#SetOption("count", 2)
 vnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
-nnoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
 onoremap <Plug>TComment-1 :call tcomment#SetOption("count", 1)
 nnoremap <silent> <Plug>TComment-gc :if v:count > 0 | call tcomment#SetOption("count", v:count) | endif | let w:tcommentPos = getpos(".") | set opfunc=tcomment#Operatorg@
 xnoremap <Plug>TComment-gc :TCommentMaybeInline
@@ -218,8 +225,6 @@ xnoremap <Plug>TComment-\_i :TCommentInline
 noremap <Plug>TComment-\_  :TComment 
 noremap <Plug>TComment-\_p vip:TComment
 xnoremap <Plug>TComment-\__ :TCommentMaybeInline
-nnoremap <Plug>TComment-\__ :TComment
-snoremap <Plug>TComment-\__ :TComment
 onoremap <Plug>TComment-\__ :TComment
 noremap <Plug>TComment-ca :call tcomment#SetOption("as", input("Comment as: ", &filetype, "customlist,tcomment#Complete"))
 noremap <Plug>TComment-cc :call tcomment#SetOption("count", v:count1)
@@ -232,7 +237,6 @@ noremap <Plug>TComment-r :TCommentRight
 noremap <Plug>TComment-  :TComment 
 noremap <Plug>TComment-p m`vip:TComment``
 vnoremap <Plug>TComment- :TCommentMaybeInline
-nnoremap <Plug>TComment- :TComment
 onoremap <Plug>TComment- :TComment
 vnoremap <Plug>(emmet-code-pretty) :call emmet#codePretty()
 vnoremap <Plug>(emmet-merge-lines) :call emmet#mergeLines()
@@ -255,11 +259,7 @@ nnoremap <Plug>(emmet-expand-abbr) :call emmet#expandAbbr(3,"")
 nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()
 nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()
 nmap <F4> :!ctags -R --recurse=yes --tag-relative=yes --exclude=.git --exclude=*.vim --PHP-kinds=+cfi --fields=+aimS --languages=php .
-nnoremap <Right> <Nop>
-xnoremap <Right> <Nop>
 onoremap <Right> <Nop>
-nnoremap <Left> <Nop>
-xnoremap <Left> <Nop>
 onoremap <Left> <Nop>
 noremap <Down> <Nop>
 noremap <Up> <Nop>
@@ -358,7 +358,7 @@ set autoindent
 set background=dark
 set completeopt=longest,menuone
 set copyindent
-set errorfile=/tmp/vLMgMkM/26
+set errorfile=/tmp/vlqXRn5/8
 set errorformat=%m\ in\ %f\ on\ line\ %l
 set expandtab
 set fileencodings=ucs-bom,utf-8,default,latin1
@@ -378,6 +378,7 @@ set softtabstop=4
 set noswapfile
 set tabstop=4
 set visualbell
+set window=38
 set nowritebackup
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
@@ -387,24 +388,30 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +47 tableedit.php
-badd +0 table.js
-badd +0 README.md
+badd +24 tableedit.php
+badd +25 table.js
+badd +7 update.php
 argglobal
 silent! argdel *
 argadd tableedit.php
 argadd table.js
-edit README.md
+edit tableedit.php
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
 argglobal
-edit README.md
+nnoremap <buffer> <silent>  :call phpcomplete#JumpToDefinition('vsplit')
+nnoremap <buffer> <silent>  :call phpcomplete#JumpToDefinition('split')
+nnoremap <buffer> <silent>  :call phpcomplete#JumpToDefinition('normal')
+onoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
+nnoremap <buffer> <silent> [[ ?\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)?:nohls
+onoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
+nnoremap <buffer> <silent> ]] /\(.*\%#\)\@!\_^\s*\zs\(\(abstract\s\+\|final\s\+\|private\s\+\|protected\s\+\|public\s\+\|static\s\+\)*function\|\(abstract\s\+\|final\s\+\)*class\|interface\)/:nohls
 setlocal keymap=
 setlocal noarabic
-setlocal autoindent
+setlocal noautoindent
 setlocal backupcopy=
 setlocal balloonexpr=
 setlocal nobinary
@@ -418,8 +425,8 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=fb:*,fb:-,fb:+,n:>
-setlocal commentstring=>\ %s
+setlocal comments=s1:/*,mb:*,ex:*/,://,:#
+setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -436,8 +443,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'markdown'
-setlocal filetype=markdown
+if &filetype != 'php.html'
+setlocal filetype=php.html
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -451,17 +458,17 @@ setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
-setlocal formatoptions=tcqln
-setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+
+setlocal formatoptions=qrocb
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
-setlocal include=
+setlocal include=\\(require\\|include\\)\\(_once\\)\\?
 setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal indentexpr=GetPhpIndent()
+setlocal indentkeys=0{,0},0),0],:,!^F,o,O,e,*<Return>,=?>,=<?,=*/
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 set linebreak
 setlocal linebreak
@@ -476,7 +483,7 @@ setlocal nrformats=bin,octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal omnifunc=phpcomplete#CompletePHP
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -498,8 +505,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'markdown'
-setlocal syntax=markdown
+if &syntax != 'php.html'
+setlocal syntax=php.html
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -513,12 +520,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+let s:l = 24 - ((18 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 03|
+24
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -21,7 +21,7 @@
 </style>
     </head>
 <body>
-    <table border="1" id="tblEdit">
+    <table id="tblEdit">
     <thead>
     <tr>
         <th>#</th>
@@ -33,8 +33,8 @@
 <?php foreach($list as $row){ ?>
     <tr>
         <td><?php echo $row['id']; ?></td>
-        <td><?php echo $row['name']; ?></td>
-        <td><?php echo $row['email']; ?></td>
+        <td rel="name" class="jx_update"><?php echo $row['name']; ?></td>
+        <td rel="email" class="jx_update"><?php echo $row['email']; ?></td>
     </tr>
 <?php } ?>
     </tbody>
